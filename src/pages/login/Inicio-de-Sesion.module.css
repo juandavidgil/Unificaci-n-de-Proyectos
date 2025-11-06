@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contenedorPrincipal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color:#ffffff;
+}
+
+/* ======== LADO IZQUIERDO ======== */
+.ladoIzquierdo {
+  position: relative;
+  width: 25%;
+  height: 500px;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+  background-image: url('../../assets//dataTools.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 12px #004C91
+}
+
+
+.ladoIzquierdo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+ 
+}
+
+.contenidoIzquierdo {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.contenidoIzquierdo .subtitulo {
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* ======== LADO DERECHO ======== */
+.ladoDerecho {
+  background-color: #ffffff;
+  width: 30%;
+  height: 500px;
+  border-radius: 0 10px 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 12px #004C91
+}
+
+.formulario {
+  width: 80%;
+  text-align: center;
+}
+
+.formulario h2 {
+  color: #004C91;
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  text-align: left;
+  color: #004C91;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+
+
+.botonIngreso:hover {
+  background-color: #004C91;
+}
+.subtitulo {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
+.slogan {
+  margin-top: 2em;
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+
+/* ======== Botones ======== */
+.botonContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* separación entre los botones */
+
+}
+
+.botonIngreso,
+.administrar {
+  width: 80%; /* mismo ancho para ambos */
+  background-color: #004C91;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 0;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.botonIngreso:hover,
+.administrar:hover {
+  background-color: #00A388;
+  transform: translateY(-2px);
+}

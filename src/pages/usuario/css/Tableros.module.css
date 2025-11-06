@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.cuerpo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+/* Contenedor del contenido */
+.contenedor {
+  background-color:#004C91;
+  border-radius: 20px;
+  width: 100%;
+  padding: 30px 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título principal */
+.titulo {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+/* Subtítulo (proyecto ID o descripción) */
+.subtitulo {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+}
+
+/* Lista de elementos dentro del tablero */
+.lista {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Cada tarjeta o elemento del tablero */
+.item {
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 260px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Título del elemento */
+.item h3 {
+  font-size: 1.2rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+/* Descripción */
+.item p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Mensaje vacío */
+.mensaje {
+  color: #f1f5f9;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contenedor {
+    padding: 5px 20px;
+  }
+
+  .item {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .titulo {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo {
+    font-size: 0.95rem;
+  }
+}

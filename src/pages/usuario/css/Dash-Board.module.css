@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cuerpo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+
+.contenedor {
+  margin:10%;
+  background-color: #004C91;
+  border-radius: 20px;
+  width: 100%;
+  padding: 50px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Títulos */
+.titulo {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: #e0e0e0;
+  margin-bottom: 40px;
+}
+
+/* Contenedor de tarjetas */
+.contenedorTarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Cada tarjeta */
+.tarjeta {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 16px;
+  width: 20%;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  padding: 20px;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08); /* Sombra más suave */
+  background-color: #f9fafb; /* Color claro neutro opcional */
+}
+
+
+/* Icono de tarjeta */
+.iconoTarjeta {
+  margin-bottom: 15px;
+}
+
+/* Títulos de tarjetas */
+.tarjeta h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #272626;
+  text-align: center;
+}
+
+/* Descripciones */
+.tarjeta p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+}
+
+
+.icono{
+  width: 100px;
+  height: 100px;
+
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contenedor {
+    padding: 30px 20px;
+  }
+}

@@ -1,0 +1,31 @@
+.boton-principal {
+  background-color:#004C91; 
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; 
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  
+}
+
+.boton-principal:hover {
+  background-color:#00A388;
+  transform: translateY(-2px);
+}
+
+.icono-flecha {
+  font-size: 1.1em;
+  transition: transform 0.3s;
+}
+
+.boton-principal:hover .icono-flecha {
+  transform: translateX(5px);
+}

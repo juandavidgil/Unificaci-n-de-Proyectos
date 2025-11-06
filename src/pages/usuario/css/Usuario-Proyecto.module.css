@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Contenedor principal */
+.cuerpo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+/* Contenedor del contenido */
+.contenedor {
+  background-color:#004C91;
+  border-radius: 20px;
+  width: 100%;
+  padding: 50px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Títulos */
+.titulo {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+/* Contenedor de tarjetas */
+.contenedorTarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 1em;
+}
+
+/* Cada tarjeta */
+.tarjeta {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 1em;;
+  width: 15%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.tarjeta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  background-color: #f9fafb;
+}
+
+/* Contenedor de imagen */
+.imagenContenedor {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Imagen dentro de la tarjeta */
+.imagenTarjeta {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center; 
+  display: block;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Título de tarjeta */
+.tarjeta h3 {
+  margin: 10px 0 4px 0;
+  font-size: 1.1rem;
+  color: #272626;
+  text-align: center;
+}
+
+/* Descripción */
+.tarjeta p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #64748b;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.CerrarSesion {
+  margin-top: 2em;
+  padding: 0.8em 1.5em;
+  background: linear-gradient(135deg, #e63946, #d90429);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(233, 37, 37, 0.3);
+  transition: all 0.3s ease;
+}
+
+.CerrarSesion:hover {
+  background: linear-gradient(135deg, #d90429, #9b2226);
+  transform: scale(1.08);
+  box-shadow: 0 6px 14px rgba(233, 37, 37, 0.5);
+}
+
+.CerrarSesion:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 6px rgba(233, 37, 37, 0.4);
+}
+/* Responsivo */
+@media (max-width: 768px) {
+  .tarjeta {
+    width: 100%;
+    max-width: 300px;
+  }
+}
