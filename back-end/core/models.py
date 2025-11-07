@@ -61,7 +61,11 @@ class UsuarioProyecto(models.Model):
     class Meta:
         unique_together = ('usuario', 'proyecto')
 
+    def __str__(self):
+        return f"{self.usuario.nombre} - {self.proyecto.nombre_proyecto}"
 
+
+# ✅ Modelo actualizado
 class Dashboard(models.Model):
     proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
     nombre_dashboard = models.CharField(max_length=100)
@@ -69,4 +73,19 @@ class Dashboard(models.Model):
     report_id = models.CharField(max_length=200, null=True, blank=True)
     tipo = models.CharField(max_length=50, null=True, blank=True)
     estado = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"{self.proyecto.nombre_proyecto} - {self.nombre_dashboard} ({self.tipo})"
+
+class UsuarioDashboard(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    proyecto = models.ForeignKey(Proyecto, on_delete=models.CASCADE)
+    dashboard = models.ForeignKey(Dashboard, on_delete=models.CASCADE)
+    fecha_asignacion = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('usuario', 'proyecto', 'dashboard')
+
+    def __str__(self):
+        return f"{self.usuario.nombre} - {self.proyecto.nombre_proyecto} - {self.dashboard.nombre_dashboard}"
 
