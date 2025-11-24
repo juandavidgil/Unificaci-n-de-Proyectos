@@ -14,13 +14,14 @@ function Tableros() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const reportContainerRef = useRef(null);
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
 
   
   useEffect(() => {
     const fetchDashboard = async () => {
       try {
         const response = await fetch(
-          `${url}/dashboards_con_embed/${proyectoId}/`
+          `${url}/dashboards_con_embed/${proyectoId}/?usuario_id=${usuario.id}`
         );
         const data = await response.json();
 

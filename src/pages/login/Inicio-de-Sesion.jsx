@@ -56,29 +56,32 @@ function InicioDeSesion() {
     }
   };
 
-  const precargarDatos = async (usuarioId) => {
-    try {
-      const proyectosRes = await fetch(`${url}/proyectos_usuario/${usuarioId}/`);
-      const proyectos = await proyectosRes.json();
+ const precargarDatos = async (usuarioId) => {
+  try {
+    const proyectosRes = await fetch(`${url}/proyectos_usuario/${usuarioId}/`);
+    const proyectos = await proyectosRes.json();
 
-      if (!proyectosRes.ok) return;
+    if (!proyectosRes.ok) return;
 
-      for (const proyecto of proyectos) {
-        const dashboardsRes = await fetch(`${url}/dashboards_con_embed/${proyecto.id}/`);
-        const dashboardsData = await dashboardsRes.json();
-        if (dashboardsRes.ok) {
-          sessionStorage.setItem(
-            `dashboards_${proyecto.id}`,
-            JSON.stringify(dashboardsData.dashboards || [])
-          );
-        }
+    for (const proyecto of proyectos) {
+      const dashboardsRes = await fetch(
+        `${url}/dashboards_con_embed/${proyecto.id}/?usuario_id=${usuarioId}`
+      );
+      const dashboardsData = await dashboardsRes.json();
+
+      if (dashboardsRes.ok) {
+        sessionStorage.setItem(
+          `dashboards_${proyecto.id}`,
+          JSON.stringify(dashboardsData.dashboards || [])
+        );
       }
-
-      sessionStorage.setItem('proyectos_usuario', JSON.stringify(proyectos));
-    } catch (error) {
-      console.warn('Error precargando proyectos o dashboards:', error);
     }
-  };
+
+    sessionStorage.setItem('proyectos_usuario', JSON.stringify(proyectos));
+  } catch (error) {
+    console.warn('Error precargando proyectos o dashboards:', error);
+  }
+};
 
   return (
     <div className={style.contenedorPrincipal}>

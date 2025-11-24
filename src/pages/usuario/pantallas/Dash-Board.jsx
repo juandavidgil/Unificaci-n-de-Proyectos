@@ -34,7 +34,10 @@ function DashBoard() {
       }
 
       try {
-        const response = await fetch(`${url}/dashboards_con_embed/${proyectoId}/`);
+        const usuario = JSON.parse(localStorage.getItem('usuario'));
+        const response = await fetch(
+          `${url}/dashboards_con_embed/${proyectoId}/?usuario_id=${usuario.id}`
+        );
         const data = await response.json();
 
         if (response.ok) {
